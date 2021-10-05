@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { composeStyleProps, StyleProps } from '../ThemeProvider';
-import { Save } from './Save';
+
+// icons (as components)
+import { Bin } from './icons/Bin';
+import { Save } from './icons/Save';
 
 const StyledIconWrapper = styled.span<StyleProps>(composeStyleProps());
 
@@ -13,7 +16,8 @@ const IconWrapper = (Icon: React.FC<any>) => (props: StyleProps) => {
 };
 
 const ICONS = {
-  Save: IconWrapper(Save),
+  save: IconWrapper(Save),
+  bin: IconWrapper(Bin),
 };
 
 export type Icons = keyof typeof ICONS;

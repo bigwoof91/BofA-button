@@ -1,6 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { Button } from './components/Button';
-import { getToken } from './components/ThemeProvider';
+import {
+  composeStyleProps,
+  getToken,
+  StyleProps,
+} from './components/ThemeProvider';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -9,21 +13,20 @@ const GlobalStyles = createGlobalStyle`
 `;
 const StyledApp = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 75%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: ${getToken(4, 'space')};
-`;
-const Flex = styled.div`
-  display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 200px;
-  > * {
-    margin-bottom: ${getToken(3, 'space')};
-  }
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: ${getToken(6, 'space')};
+`;
+const Flex = styled.div<StyleProps>`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  ${composeStyleProps()}
+`;
+const Container = styled.div`
+  margin-bottom: ${getToken(6, 'space')};
+  margin-right: ${getToken(6, 'space')};
 `;
 
 function App() {
@@ -31,26 +34,52 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Flex>
-          <h2>Primary Btn</h2>
-          <Button variant="primary" icon="Save">
-            Primary Button
-          </Button>
-          <h3>Disabled</h3>
+        <h1>Button</h1>
 
-          <Button variant="primary" icon="Save" disabled>
-            Disabled
-          </Button>
-        </Flex>
-        <Flex>
-          <h2>Secondary Btn</h2>
-          <Button variant="secondary" icon="Save">
-            Save as...
-          </Button>
-          <h3>Disabled</h3>
-          <Button variant="secondary" icon="Save" disabled>
-            Save as...
-          </Button>
+        <Flex flexWrap="wrap">
+          <Container>
+            <h2>Primary</h2>
+            <h3>Default</h3>
+            <Flex>
+              <Button variant="primary" icon="save" mr={2}>
+                Save as...
+              </Button>
+              <Button variant="primary" icon="bin">
+                Delete
+              </Button>
+            </Flex>
+            <h3>Disabled</h3>
+            <Flex>
+              <Button variant="primary" icon="save" mr={2} disabled>
+                Save as...
+              </Button>
+              <Button variant="primary" icon="bin" disabled>
+                Delete
+              </Button>
+            </Flex>
+          </Container>
+
+          <Container>
+            <h2>Secondary</h2>
+            <h3>Default</h3>
+            <Flex>
+              <Button variant="secondary" icon="save" mr={2}>
+                Save as...
+              </Button>
+              <Button variant="secondary" icon="bin">
+                Delete
+              </Button>
+            </Flex>
+            <h3>Disabled</h3>
+            <Flex>
+              <Button variant="secondary" icon="save" mr={2} disabled>
+                Save as...
+              </Button>
+              <Button variant="secondary" icon="bin" disabled>
+                Delete
+              </Button>
+            </Flex>
+          </Container>
         </Flex>
       </StyledApp>
     </>

@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 import { defaultTheme } from './ThemeProvider';
 
 export type Scale = keyof typeof defaultTheme;
-export type OrdinalTokens = 0 | 1 | 2 | 3 | 4 | 5;
+export type OrdinalTokens = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 export type Token =
   | keyof typeof defaultTheme.colors
   | keyof typeof defaultTheme.fonts
