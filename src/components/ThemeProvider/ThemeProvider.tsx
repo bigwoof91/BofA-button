@@ -12,7 +12,6 @@ const defaultTheme = {
     'color-neutral': '#a2a2a2',
     'color-neutral-dark': '#4d4d4d',
     'color-neutral-darkest': '#000',
-    'disabled-background-color': '#e8e8e8',
   },
   borders: [0, '2px solid transparent', '2px solid #000'],
   space: [0, '0.2rem', '0.4rem', '0.8rem', '1.2rem', '1.6rem', '3.4rem'],

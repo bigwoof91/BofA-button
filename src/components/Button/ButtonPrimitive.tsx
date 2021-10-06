@@ -22,7 +22,7 @@ const StyledButton = styled.button<ButtonPrimitiveProps>`
   box-sizing: border-box;
   &:disabled {
     cursor: not-allowed;
-    pointerevents: none;
+    pointer-events: none;
     outline-color: transparent;
     border-color: transparent;
     color: ${getToken('color-neutral-dark')};

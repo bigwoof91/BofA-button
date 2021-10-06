@@ -10,7 +10,6 @@ const StyledPrimaryButton = styled(ButtonPrimitive)`
       background-color: ${getToken('color-primary-highlight')};
     }
     &:focus {
-      background-color: ${getToken('color-primary-highlight')};
       border: ${getToken(2, 'borders')};
     }
   }
